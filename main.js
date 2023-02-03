@@ -23,8 +23,9 @@ function clearCanvas() {
 
 /***** Write your lab4 homework below here *****/
 
+/*Here is the function to draw the caterpillar cartoon using the code from project one
+the function is meant to draw the cartoon relative draw the cartoon relative to what the coordinates were from the previous canvas*/
 function processBug(CaterPillarX, CaterPillarY) {
-    console.log(typeof CaterPillarX, typeof CaterPillarY)
 
 
     /*caterpillar cartoon*/
@@ -180,6 +181,8 @@ function processBug(CaterPillarX, CaterPillarY) {
         .attr("fill", "black");
 }
 
+/*Here is the function to draw the butterfly cartoon using the code from project one
+the function is meant to draw the cartoon relative to what the coordinates were from the previous canvas*/
 function processButterFly(ButterFlyX, ButterFlyY) {
     /*butterfly cartoon*/
 
@@ -253,6 +256,8 @@ function processButterFly(ButterFlyX, ButterFlyY) {
 
 }
 
+/*Here is the function to draw both the caterpillar and butterfly cartoon using the code from project one
+the function puts into consideration both axis of each cartoon */
 function processBoth(CaterPillarX, CaterPillarY, ButterFlyX, ButterFlyY) {
     /*caterpillar cartoon*/
 
@@ -477,19 +482,29 @@ function processBoth(CaterPillarX, CaterPillarY, ButterFlyX, ButterFlyY) {
         .attr("ry", 10)
         .attr("fill", "red");
 }
-
+/*my button id for the first drawing is createcaterpillar, event listener is added so when a user clicks
+on the button the draw caterpillar function is executed*/
 document.getElementById("createCaterpillarButton").addEventListener("click", drawCaterpillar)
 
+/*here is another function to draw the caterpillar once more but this time relative to the value inputs of my variables xInput1 and yInput1*/
 function drawCaterpillar() {
     let x = document.getElementById("xInput1").value
     let y = document.getElementById("yInput1").value
+    /*initially I checked the console to see what my inputs were being read as. They were seen as strings 
+    and not numbers so I parseIntegered them to be read as numbers-searched online*/
     x = parseInt(x)
     y = parseInt(y)
     clearCanvas()
+    /*this then executes our previous processbug function which was just to draw the caterpillar in
+    its origin point but now the function takes into command the inputs of x,y when a user interacts
+    with the text inputs*/
     processBug(x, y)
     console.log(x, y)
 }
+
 document.getElementById("createButterflyButton").addEventListener("click", drawButterfly)
+
+/*here is another function to draw the butterfly once more but this time relative to the value inputs of my variables xInput2 and yInput2*/
 
 function drawButterfly() {
     let x = document.getElementById("xInput2").value
@@ -502,6 +517,10 @@ function drawButterfly() {
 }
 
 document.getElementById("createBoth").addEventListener("click", drawBoth)
+
+/*Bonus section
+here is a new function to draw both, taking into consideration all 4 inputs (xInput1,yInput2, xInput2, yInput2) 
+as well as the "processBoth" function to initially make the two cartoons appear simultaneously.*/
 
 function drawBoth() {
     let x1 = document.getElementById("xInput1").value
