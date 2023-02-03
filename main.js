@@ -264,7 +264,17 @@ function drawCaterpillar() {
     processBug(x, y)
     console.log(x, y)
 }
+document.getElementById("processButterfly").addEventListener("click", drawButterfly)
 
+function drawButterfly() {
+    let x = document.getElementById("xInput2").value
+    let y = document.getElementById("yInput2").value
+    x = parseInt(x)
+    y = parseInt(y)
+    clearCanvas()
+    drawButterFly(x, y)
+    console.log(x, y)
+}
 
 
 ;
